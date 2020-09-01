@@ -1,0 +1,17 @@
+{
+  "name": "gs-martianrobot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "dev": "DEBUG=gs-martianrobot:* nodemon ./bin/www",
+    "dev-windows": "nodemon ./bin/www"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "underscore": "^1.11.0"
+  }
+}
