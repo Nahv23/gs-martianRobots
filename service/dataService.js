@@ -10,6 +10,7 @@ const parseInputData = () => {
 
 const getGridDimensions = (data) => {
   let parseGridDimensions = data[0].trim().replace(/ /g, "").split('');
+  parseGridDimensions = [parseInt(parseGridDimensions[0]),parseInt(parseGridDimensions[1])]
   if (configurationController.isCorrectGridConfig(parseGridDimensions)){
     return parseGridDimensions;
   }
@@ -26,8 +27,16 @@ const getRobotsData = (data, gridDimensions) => {
   return robotsArray
 }
 
+const transformResultToOutput = ((result) => {
+  for(let i=0; i < result.length; i++){
+    console.log(result[i].toString().replace(/,/g, " ") + '\n' )
+    result[i].toString().replace(/ /g, "").split('');
+  }
+})
+
 module.exports = {
   parseInputData: parseInputData,
   getGridDimensions: getGridDimensions,
   getRobotsData: getRobotsData,
+  transformResultToOutput: transformResultToOutput
 };

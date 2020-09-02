@@ -7,17 +7,9 @@ const isCorrectGridConfig = (dimension) => {
   }
 };
 
-const isCorrectRobotInitialPosition = (position, gripDimensions) => {
-  if ( exp ) {
-    return true;
-  } else {
-    throw new Error("The grid size must be between 0 and 50 in both axis");
-  }
-};
-
 const isCorrectInitialRobotPosition = (coordinates, gridDimension) => { 
   if( coordinates[0] < 0 || coordinates[1] < 0){
-    throw new Error("The initial coordenates must be more than 0");
+    throw new Error("The initial coordinates must be more than 0");
   } else if (coordinates[0] > gridDimension[0] || coordinates[1] > gridDimension[1]){
     throw new Error("The robot must be inside the grid");
   } else if ( coordinates[2] !== 'N' && coordinates[2] !== 'W' && coordinates[2] !== 'E' && coordinates[2] !== 'E'){
@@ -41,7 +33,6 @@ const isMoreThanHundredInstructions = (instructions) => {
 
 module.exports = {
   isCorrectGridConfig: isCorrectGridConfig,
-  isCorrectRobotInitialPosition: isCorrectRobotInitialPosition,
   isCorrectInitialRobotPosition: isCorrectInitialRobotPosition,
   isMoreThanHundredInstructions: isMoreThanHundredInstructions
 
